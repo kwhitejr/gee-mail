@@ -1,0 +1,19 @@
+.title {
+	font-family: Arial;
+}
+
+* {
+	background-color: black;
+	font-family: Arial;
+	color: yellow;
+
+}
+
+table {
+	background-color: black;
+	color: yellow;
+}
+
+th {
+	text-align: left;
+}

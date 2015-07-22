@@ -1,6 +1,7 @@
 
-/*This is the mail generator file that will generate initial mail messages and expose methods for creating new messages in your project. Do not make any modifications to this file for your solution. Happy coding!*/
-
+/*This is the mail generator file that will generate initial mail messages and
+/*expose methods for creating new messages in your project. Do not make any
+/*modifications to this file for your solution. Happy coding!*/
 
 //Gee Mail message stub data 
 var subject = ['Call Your Mother', 'Cheap Online Meds', 'Change Your Life Today', 'Sppoky Stories', 'Meet Singles In Your Area', 'Have You Heard?', 'Yo', 'RE: Looking for a three legged cat', 'Get Rich Quick!', 'FW: Token Chain Email'];
@@ -34,7 +35,7 @@ function getNewMessage(){
 }
 
 function getRandomDate(){
-	var year = 2013;
+	var year = 2015;
 	var month = Math.floor(Math.random() * 12) + 1;
 	var day = Math.floor(Math.random() * 30) + 1;
 	var hours = Math.floor(Math.random() * 12) + 1;
