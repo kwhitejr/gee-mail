@@ -7,42 +7,77 @@
 		<script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
 		<script id="emailTemplate" type="text/x-jquery-tmpl">
     		<tr>
-                <td> ${date} </td>
-                <td> ${sender} </td>
-                <td> ${subject} </td>
-                <td> ${body} </td>
+                <td class="date"> ${date} </td>
+                <td class="sender"> ${sender} </td>
+                <td class="subject"> ${subject} </td>
+                <td class="body"> ${body} </td>
             </tr>
         </script>
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-			$("document").ready(function(){
+			$(document).ready(function(){
  				window.geemails = [];
     			loadGeeMails(); 
     			console.log(window.geemails);
+    			updateInbox();
     			
 				$("#emailTemplate").tmpl(window.geemails).appendTo("#emailContainer");
-				});
+				
+				$('td:nth-child(4)').hide();
+
+				$('table').on('click', 'td:nth-child(3)', function () {
+					$(this).next().toggle();
+					});
+
+			});
+
+			function updateInbox() {
+					var inboxCount = window.geemails.length;
+					document.getElementById("inbox").innerHTML = "Mysteries left to solve, Detective: " + inboxCount;
+				}
+
+
+
+			setInterval(function(){
+					var myMessage = getNewMessage();
+					window.geemails.push(myMessage);
+					console.log(window.geemails);
+					$("emailContainer").append(myMessage); //I can see the increasing count in the console log, but cannot get the new rows to appear on screen :/ 
+					updateInbox();
+				}, 5000);
+
+			
 		};
 
     </script>
 	</head>
 	<body>
-		<div id="header">
+		<div>
 			<h1 id="title">Na Na Na Na Na Na Na Na, Batmail!</h1>
 		</div>
 
-		<table>
+		<div id="left">
+		<h3 id="inbox">Mysteries left to solve, Detective:</h3>
+		</div>
+
+
+		<table id="table">
             <tr>
-                <th>Date</th>
-                <th>Sender</th>
-                <th>Subject</th>
-                <th>Body</th>
+                <th class="date">Date</th>
+                <th class="date">Sender</th>
+                <th class="date">Subject</th>
+                <th class="body">Message</th>
             </tr>
             <tbody id="emailContainer">                
             </tbody>    
         </table>
+        
+
+        <div id="footer">
+        	<h5>Brought to you by Oracle.</h5> 
+        </div>
 
 	</body>
 </html>

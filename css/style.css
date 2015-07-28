@@ -1,19 +1,84 @@
-.title {
-	font-family: Arial;
+body {
+	background-color: black;
+	
 }
 
-* {
-	background-color: black;
-	font-family: Arial;
+h1 {
+	width: 1200px;
+	margin: 10px auto 10px auto;
+	font-family: Georgia, serif;
 	color: yellow;
+	text-shadow: 2px 2px #737373;
+	padding: 5px 5px 5px 5px;
+}
 
+h3 {
+	width: 1200px;
+	margin: 10px auto 10px auto;
+	font-family: Georgia, serif;
+	color: yellow;
+	font-style: oblique;
+}
+
+h5 {
+	width: 1200px;
+	margin: 10px auto 10px auto;
+	font-family: Georgia, serif;
+	color: yellow;
 }
 
 table {
+	width: 1210px;
+	margin: 10px auto 10px auto;
+	font-family: Arial;
+	color: #CCCC52;
 	background-color: black;
-	color: yellow;
+
 }
 
 th {
+	background-color: black;
 	text-align: left;
+}
+
+td.date {
+	width: 200px;
+}
+
+td.sender {
+	width: 200px;
+	text-align: center;
+}
+
+td.subject {
+	width: 200px;
+	text-align: center;
+}
+
+td.body {
+	width: 600px;
+}
+
+tr:nth-child(odd) {
+	background-color: #5A5A5A;
+	} 
+
+tr:nth-child(even) {
+	background-color: #737373;
+	}
+
+td:nth-child(3):hover {
+	color: yellow;
+	background-color: #333333;
+}
+
+td:nth-child(4) {
+	color: yellow;
+}
+
+#footer {
+	position : absolute;
+    bottom : 0;
+    height : 40px;
+    margin-top : 40px;
 }
